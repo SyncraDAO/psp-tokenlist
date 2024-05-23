@@ -1,0 +1,23 @@
+{
+  "name": "PEPE",
+  "symbol": "PEPE",
+  "type": "PSP22",
+  "contractAddress": "5DrwA4qJyLC22zrCsWAQGDCLfW1L8weu82BVXb3jwzQ1y4Eq",
+  "decimals": ,
+  "description": "",
+  "website": "",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": ""
+    },
+    {
+      "name": "Telegram",
+      "url": ""
+    },
+    {
+      "name": "Discord",
+      "url": ""
+    }
+  ]
+}
