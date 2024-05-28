@@ -55,7 +55,14 @@ After entering the content, use the `Commit changes` button to save the `info.js
 - Drag and drop your logo.png file into the space provided or use the file selector to navigate and select your file. Remember, the logo should be a 256x256 pixel PNG image.
 - Commit the file similarly by providing a commit message and selecting Commit changes.
 
-**Step 6:** Review and Submit
+**Step 6**: Add the `metadata.json` File
+
+- Following the addition of the logo.png, add a metadata.json file in the same directory.
+- Click the Add file button again and select Create new file.
+- Name the new file metadata.json and paste the appropriate JSON content that describes additional metadata about the token.
+- Commit the file as described above.
+
+**Step 7:** Review and Submit
 
 - After adding both the info.json and logo.png files, review the directory to ensure everything is in place.
 - If you are ready to submit to the repository maintainers for review, navigate to the Pull requests tab at the repository's top menu.
