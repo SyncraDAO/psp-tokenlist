@@ -4,7 +4,9 @@
 This guide outlines how to add your token information to the repository using the GitHub web interface. Follow these steps to ensure your submission is organized correctly and processed efficiently.
 
 **Step 1:** Go to the main page of the GitHub repository.
+
 **Step 2:** Navigate to the tokens `/tokens/psp22/` directory within the repository. This directory is specifically for PSP22 tokens.
+
 **Step 3:** Create a new directory for your token.
 
 - Click the `Add file` button and select Create new file.
