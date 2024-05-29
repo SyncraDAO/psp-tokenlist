@@ -3,19 +3,16 @@
 
 This guide outlines how to add your token information to the repository using the GitHub web interface. Follow these steps to ensure your submission is organized correctly and processed efficiently.
 
-**Step 1:** Navigate to the Repository
-Go to the main page of the GitHub repository.
-
-**Step 2:** Go to the Tokens Directory
-Navigate to the tokens `/tokens/psp22/` directory within the repository. This directory is specifically for PSP22 tokens.
-
-**Step 3:** Create a New Directory for Your Token
+**Step 1:** Go to the main page of the GitHub repository.
+**Step 2:** Navigate to the tokens `/tokens/psp22/` directory within the repository. This directory is specifically for PSP22 tokens.
+**Step 3:** Create a new directory for your token.
 
 - Click the `Add file` button and select Create new file.
 - In the path field `ascan-tokenlists/tokens/psp22
-/`, type `[contract-address]/` with the actual contract address of your token. This automatically creates a new directory for your token under the psp22 subdirectory.
+/`, type `[contract-address]/` with the actual contract address of your token on Aleph Zero Mainnet network. This automatically creates a new directory for your token under the psp22 subdirectory.
 
 **Step 4:** Add the `info.json` file content
+
 With the directory path set, name the new file `info.json`.
 
 Paste the JSON structure into the content area. Here is an example template you should follow:
@@ -64,9 +61,9 @@ After entering the content, use the `Commit changes` button to save the `info.js
 
 **Step 7:** Review and Submit
 
-- After adding both the info.json and logo.png files, review the directory to ensure everything is in place.
-- If you are ready to submit to the repository maintainers for review, navigate to the Pull requests tab at the repository's top menu.
-- Select New pull request, set the base repository to the main branch, and compare your branch.
+- After adding the `info.json`, `logo.png` and `metadata.json` files, review the directory to ensure everything is in place.
+- If you are ready to submit to the repository maintainers for review, navigate to the `Pull requests` tab at the repository's top menu.
+- Select `New pull request`, set the base repository to the main branch, and compare your branch.
 - Fill in the title and description of your changes and click Create pull request.
 
 ### Note
