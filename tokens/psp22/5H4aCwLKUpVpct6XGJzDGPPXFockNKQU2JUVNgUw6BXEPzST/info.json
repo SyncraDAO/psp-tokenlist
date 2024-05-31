@@ -1,0 +1,23 @@
+{
+    "name": "INK WHALE",
+    "symbol": "IWH",
+    "type": "PSP22",
+    "decimals": 12,
+    "contractAddress": "5H4aCwLKUpVpct6XGJzDGPPXFockNKQU2JUVNgUw6BXEPzST",
+    "description": "Just doggy",
+    "website": "https://ascan.alephzero.org/",
+    "links": [
+      {
+        "name": "X/Twitter",
+        "url": "https://x.com/Aleph__Zero"
+      },
+      {
+        "name": "Telegram",
+        "url": "https://x.com/Aleph__Zero"
+      },
+      {
+        "name": "Discord",
+        "url": "https://x.com/Aleph__Zero"
+      }
+    ]
+  }
