@@ -2,7 +2,7 @@ name: PR Validation and Notifications
 
 on:
   pull_request:
-    types: [opened, ready_for_review, review_requested, reopened, closed]
+    types: [opened, ready_for_review, review_requested, reopened, closed, synchronize]
   pull_request_review:
     types: [submitted]
 
