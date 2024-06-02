@@ -2,11 +2,19 @@ name: PR Validation and Notifications
 
 on:
   pull_request:
-    types: [opened, ready_for_review, review_requested, reopened, closed]
+    types: [opened, ready_for_review, review_requested, reopened, closed, synchronize]
   pull_request_review:
     types: [submitted]
 
 jobs:
+  log_info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log PR Info
+        run: |
+          echo "PR Number: ${{ github.event.number }}"
+          echo "Action: ${{ github.event.action }}"
+
   validate_and_notify:
     runs-on: ubuntu-latest
     name: Validate JSON and Notify on Telegram
@@ -51,7 +59,7 @@ jobs:
       - name: Prepare Notification Message
         if: success() # This will proceed only if the previous validation step was successful
         run: |
-          message="🚀 Hello World!"
+          message=""
           pr_link="${{ github.event.pull_request.html_url }}"
           if [ "${{ github.event_name }}" == "pull_request" ]; then
             if [ "${{ github.event.action }}" == "opened" ]; then
@@ -68,10 +76,14 @@ jobs:
           elif [ "${{ github.event_name }}" == "pull_request_review" ] && [ "${{ github.event.review.state }}" == "approved" ]; then
             message="👍 PR approved by ${{ github.event.review.user.login }}: #${{ github.event.pull_request.number }} - $pr_link"
           fi
+          if [ -z "$message" ]; then
+            echo "No relevant action taken, skipping notification."
+            exit 0
+          fi
           echo "TG_SENDER_PAYLOAD_MESSAGE=$message" >> $GITHUB_ENV
 
       - name: Send Notification to Telegram
-        if: success() # Again, only proceed if the message preparation was successful
+        if: env.TG_SENDER_PAYLOAD_MESSAGE != '' && success()
         uses: BorisTestov/tg_sender_action@latest
         env:
           TG_SENDER_TG_CHAT_ID: ${{ secrets.CHATID }}
