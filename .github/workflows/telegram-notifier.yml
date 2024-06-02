@@ -43,7 +43,7 @@ jobs:
       - name: Test
         uses: georgepstaylor/telegram-github-notifier@v0.0.1
         with:
-          telegram_bot_token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          telegram_chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
+          telegram_bot_token: ${{ secrets.BotToken }}
+          telegram_chat_id: ${{ secrets.CHATID }}
           gh_event: ${{ toJson(github.event) }}
           gh_actor: ${{ github.actor }}
