@@ -1,33 +1,40 @@
 name: Telegram Pull Request Notifier
-# on:
-#   pull_request:
-#     types: [opened, review_requested]
+
 on:
-  issue_comment:
-    types:
-      - created
-  issues:
-    types: [opened, edited, pinned, closed, reopened, assigned]
   pull_request:
-    types: [opened, closed, edited, ready_for_review, review_requested, reopened]
-  pull_request_review_comment:
-    types:
-      - created
-  push:
-    branches:
-      - main
+    types: [opened, ready_for_review, review_requested, reopened, closed]
+  pull_request_review:
+    types: [submitted]
 
 jobs:
   tg_post_job:
     runs-on: ubuntu-latest
     name: A job to post data in tg
+
     steps:
+      - name: Prepare message
+        id: prep_message
+        run: |
+          message="🚀 Hello World!"
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            if [[ "${{ github.event.action }}" == "opened" ]]; then
+              message="🚀 New PR created: #${{ github.event.pull_request.number }} by ${{ github.event.pull_request.user.login }}"
+            elif [[ "${{ github.event.action }}" == "ready_for_review" ]]; then
+              message="📝 PR is ready for review: #${{ github.event.pull_request.number }}"
+            elif [[ "${{ github.event.action }}" == "closed" ]] && ${{ github.event.pull_request.merged }}; then
+              message="✅ PR merged: #${{ github.event.pull_request.number }}"
+            fi
+          elif [[ "${{ github.event_name }}" == "pull_request_review" ]] && [[ "${{ github.event.review.state }}" == "approved" ]]; then
+            message="👍 PR approved by ${{ github.event.review.user.login }}: #${{ github.event.pull_request.number }}"
+          fi
+          echo "TG_SENDER_PAYLOAD_MESSAGE=$message" >> $GITHUB_ENV
+
       - name: Send data
         uses: BorisTestov/tg_sender_action@latest
         env:
           TG_SENDER_TG_CHAT_ID: ${{ secrets.CHATID }}
           TG_SENDER_TG_BOT_TOKEN: ${{ secrets.BotToken }}
-          TG_SENDER_PAYLOAD_MESSAGE: "🚀 Hello World!"
+          TG_SENDER_PAYLOAD_MESSAGE: ${{ env.TG_SENDER_PAYLOAD_MESSAGE }}
 
 
 # jobs:
