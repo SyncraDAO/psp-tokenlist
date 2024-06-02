@@ -48,32 +48,36 @@ jobs:
         with:
           comment: "true" # This will post a comment if the validation fails
 
-      - name: Prepare Notification Message
-        if: success() # This will proceed only if the previous validation step was successful
-        run: |
-          message="🚀 Hello World!"
-          pr_link="${{ github.event.pull_request.html_url }}"
-          if [ "${{ github.event_name }}" == "pull_request" ]; then
-            if [ "${{ github.event.action }}" == "opened" ]; then
-              message="🚀 New PR created: #${{ github.event.pull_request.number }} by ${{ github.event.pull_request.user.login }} - $pr_link"
-            elif [ "${{ github.event.action }}" == "ready_for_review" ]; then
-              message="📝 PR is ready for review: #${{ github.event.pull_request.number }} - $pr_link"
-            elif [ "${{ github.event.action }}" == "reopened" ]; then
-              message="🔄 PR reopened: #${{ github.event.pull_request.number }} - $pr_link"
-            elif [ "${{ github.event.action }}" == "closed" ] && [ "${{ github.event.pull_request.merged }}" == "true" ]; then
-              message="✅ PR merged: #${{ github.event.pull_request.number }} - $pr_link"
-            elif [ "${{ github.event.action }}" == "closed" ] && [ "${{ github.event.pull_request.merged }}" == "false" ]; then
-              message="❌ PR closed without merging: #${{ github.event.pull_request.number }} - $pr_link"
-            fi
-          elif [ "${{ github.event_name }}" == "pull_request_review" ] && [ "${{ github.event.review.state }}" == "approved" ]; then
-            message="👍 PR approved by ${{ github.event.review.user.login }}: #${{ github.event.pull_request.number }} - $pr_link"
-          fi
-          echo "TG_SENDER_PAYLOAD_MESSAGE=$message" >> $GITHUB_ENV
+- name: Prepare Notification Message
+  if: success() # This will proceed only if the previous validation step was successful
+  run: |
+    message=""
+    pr_link="${{ github.event.pull_request.html_url }}"
+    if [ "${{ github.event_name }}" == "pull_request" ]; then
+      if [ "${{ github.event.action }}" == "opened" ]; then
+        message="🚀 New PR created: #${{ github.event.pull_request.number }} by ${{ github.event.pull_request.user.login }} - $pr_link"
+      elif [ "${{ github.event.action }}" == "ready_for_review" ]; then
+        message="📝 PR is ready for review: #${{ github.event.pull_request.number }} - $pr_link"
+      elif [ "${{ github.event.action }}" == "reopened" ]; then
+        message="🔄 PR reopened: #${{ github.event.pull_request.number }} - $pr_link"
+      elif [ "${{ github.event.action }}" == "closed" ] && [ "${{ github.event.pull_request.merged }}" == "true" ]; then
+        message="✅ PR merged: #${{ github.event.pull_request.number }} - $pr_link"
+      elif [ "${{ github.event.action }}" == "closed" ] && [ "${{ github.event.pull_request.merged }}" == "false" ]; then
+        message="❌ PR closed without merging: #${{ github.event.pull_request.number }} - $pr_link"
+      fi
+    elif [ "${{ github.event_name }}" == "pull_request_review" ] && [ "${{ github.event.review.state }}" == "approved" ]; then
+      message="👍 PR approved by ${{ github.event.review.user.login }}: #${{ github.event.pull_request.number }} - $pr_link"
+    fi
+    if [ -z "$message" ]; then
+      echo "No relevant action taken, skipping notification."
+      exit 0
+    fi
+    echo "TG_SENDER_PAYLOAD_MESSAGE=$message" >> $GITHUB_ENV
 
-      - name: Send Notification to Telegram
-        if: success() # Again, only proceed if the message preparation was successful
-        uses: BorisTestov/tg_sender_action@latest
-        env:
-          TG_SENDER_TG_CHAT_ID: ${{ secrets.CHATID }}
-          TG_SENDER_TG_BOT_TOKEN: ${{ secrets.BotToken }}
-          TG_SENDER_PAYLOAD_MESSAGE: ${{ env.TG_SENDER_PAYLOAD_MESSAGE }}
+- name: Send Notification to Telegram
+  if: env.TG_SENDER_PAYLOAD_MESSAGE != '' && success()
+  uses: BorisTestov/tg_sender_action@latest
+  env:
+    TG_SENDER_TG_CHAT_ID: ${{ secrets.CHATID }}
+    TG_SENDER_TG_BOT_TOKEN: ${{ secrets.BotToken }}
+    TG_SENDER_PAYLOAD_MESSAGE: ${{ env.TG_SENDER_PAYLOAD_MESSAGE }}
