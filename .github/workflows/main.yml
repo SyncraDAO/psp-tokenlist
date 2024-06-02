@@ -20,16 +20,22 @@ jobs:
         run: |
           missing_files=false
           error_message="Missing required files: "
+          
+          # Check each subfolder for info.json, logo.png, and metadata.json
           for dir in tokens/psp22/*; do
             if [ ! -d "$dir" ]; then continue; fi  # Skip if not a directory
             echo "Checking directory: $dir"
             if [ ! -f "$dir/info.json" ]; then
               missing_files=true
-              error_message="${error_message}info.json is missing in $dir/"
+              error_message="${error_message}info.json is missing in $dir "
             fi
             if [ ! -f "$dir/logo.png" ]; then
               missing_files=true
-              error_message="${error_message}logo.png is missing in $dir/"
+              error_message="${error_message}logo.png is missing in $dir "
+            fi
+            if [ ! -f "$dir/metadata.json" ]; then
+              missing_files=true
+              error_message="${error_message}metadata.json is missing in $dir "
             fi
           done
           if [ "$missing_files" = true ]; then
