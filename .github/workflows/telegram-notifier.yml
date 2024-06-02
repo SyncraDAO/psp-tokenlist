@@ -16,15 +16,15 @@ jobs:
         id: prep_message
         run: |
           message="🚀 Hello World!"
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            if [[ "${{ github.event.action }}" == "opened" ]]; then
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            if [ "${{ github.event.action }}" == "opened" ]; then
               message="🚀 New PR created: #${{ github.event.pull_request.number }} by ${{ github.event.pull_request.user.login }}"
-            elif [[ "${{ github.event.action }}" == "ready_for_review" ]]; then
+            elif [ "${{ github.event.action }}" == "ready_for_review" ]; then
               message="📝 PR is ready for review: #${{ github.event.pull_request.number }}"
-            elif [[ "${{ github.event.action }}" == "closed" ]] && ${{ github.event.pull_request.merged }}; then
+            elif [ "${{ github.event.action }}" == "closed" ] && [ "${{ github.event.pull_request.merged }}" == "true" ]; then
               message="✅ PR merged: #${{ github.event.pull_request.number }}"
             fi
-          elif [[ "${{ github.event_name }}" == "pull_request_review" ]] && [[ "${{ github.event.review.state }}" == "approved" ]]; then
+          elif [ "${{ github.event_name }}" == "pull_request_review" ] && [ "${{ github.event.review.state }}" == "approved" ]; then
             message="👍 PR approved by ${{ github.event.review.user.login }}: #${{ github.event.pull_request.number }}"
           fi
           echo "TG_SENDER_PAYLOAD_MESSAGE=$message" >> $GITHUB_ENV
