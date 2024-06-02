@@ -19,7 +19,7 @@ jobs:
         id: check_files
         run: |
           missing_files=false
-          error_message="Missing required files:"
+          error_message="Missing required files: "
           for dir in tokens/psp22/*; do
             if [ ! -d "$dir" ]; then continue; fi  # Skip if not a directory
             echo "Checking directory: $dir"
