@@ -1,26 +1,7 @@
-# name: Telegram Pull Request Notifier
+name: Telegram Pull Request Notifier
 # on:
 #   pull_request:
 #     types: [opened, review_requested]
-
-# jobs:
-#   build:
-#     name: Build
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: send telegram message on push
-#         uses: appleboy/telegram-action@master
-#         with:
-#           to: ${{ secrets.BotToken }}
-#           token: ${{ secrets.CHATID }}
-#           message: |
-#             ${{ github.actor }} created commit:
-#             Commit message: ${{ github.event.commits[0].message }}
-            
-#             Repository: ${{ github.repository }}
-            
-#             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
-name: Notify Telegram
 on:
   issue_comment:
     types:
@@ -37,13 +18,47 @@ on:
       - main
 
 jobs:
- test:
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Test
-        uses: georgepstaylor/telegram-github-notifier@v0.0.1
+      - name: send telegram message on push
+        uses: appleboy/telegram-action@master
         with:
-          telegram_bot_token: ${{ secrets.BotToken }}
-          telegram_chat_id: ${{ secrets.CHATID }}
-          gh_event: ${{ toJson(github.event) }}
-          gh_actor: ${{ github.actor }}
+          to: ${{ secrets.BotToken }}
+          token: ${{ secrets.CHATID }}
+          message: |
+            ${{ github.actor }} created commit:
+            Commit message: ${{ github.event.commits[0].message }}
+            
+            Repository: ${{ github.repository }}
+            
+            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+# name: Notify Telegram
+# on:
+#   issue_comment:
+#     types:
+#       - created
+#   issues:
+#     types: [opened, edited, pinned, closed, reopened, assigned]
+#   pull_request:
+#     types: [opened, closed, edited, ready_for_review, review_requested, reopened]
+#   pull_request_review_comment:
+#     types:
+#       - created
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#  test:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Test
+#         uses: georgepstaylor/telegram-github-notifier@v0.0.1
+#         with:
+#           telegram_bot_token: ${{ secrets.BotToken }}
+#           telegram_chat_id: ${{ secrets.CHATID }}
+#           gh_event: ${{ toJson(github.event) }}
+#           gh_actor: ${{ github.actor }}
+          
