@@ -1,0 +1,23 @@
+{
+  "name": "EXTR COIN",
+  "symbol": "EXT",
+  "type": "PSP22",
+  "contractAddress": "5DuyRY19RZsxnyffwKRSox8rj5VUHf49fHLjUcZpfnwFrYGZ",
+  "decimals": 12,
+  "description": "",
+  "website": "",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": ""
+    },
+    {
+      "name": "Telegram",
+      "url": ""
+    },
+    {
+      "name": "Discord",
+      "url": ""
+    }
+  ]
+}
