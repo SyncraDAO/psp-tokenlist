@@ -1,23 +1,51 @@
-name: json-yaml-validate 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-  workflow_dispatch:
+name: PR Validation and Notifications
 
-permissions:
-  contents: read
-  pull-requests: write # enable write permissions for pull request comments
+on:
+  pull_request:
+    types: [opened, ready_for_review, review_requested, reopened, closed]
+  pull_request_review:
+    types: [submitted]
 
 jobs:
-  json-yaml-validate:
+  validate_and_notify:
     runs-on: ubuntu-latest
+    name: Validate JSON and Notify on Telegram
+
     steps:
       - uses: actions/checkout@v4
+        name: Checkout Code
 
-      - name: json-yaml-validate
-        id: json-yaml-validate
+      - name: JSON/YAML Validation
         uses: GrantBirki/json-yaml-validate@v2.7.1
         with:
-          comment: "true" # enable comment mode
+          comment: "true" # This will post a comment if the validation fails
+
+      - name: Prepare Notification Message
+        if: success() # This will proceed only if the previous validation step was successful
+        run: |
+          message="🚀 Hello World!"
+          pr_link="${{ github.event.pull_request.html_url }}"
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            if [ "${{ github.event.action }}" == "opened" ]; then
+              message="🚀 New PR created: #${{ github.event.pull_request.number }} by ${{ github.event.pull_request.user.login }} - $pr_link"
+            elif [ "${{ github.event.action }}" == "ready_for_review" ]; then
+              message="📝 PR is ready for review: #${{ github.event.pull_request.number }} - $pr_link"
+            elif [ "${{ github.event.action }}" == "reopened" ]; then
+              message="🔄 PR reopened: #${{ github.event.pull_request.number }} - $pr_link"
+            elif [ "${{ github.event.action }}" == "closed" ] && [ "${{ github.event.pull_request.merged }}" == "true" ]; then
+              message="✅ PR merged: #${{ github.event.pull_request.number }} - $pr_link"
+            elif [ "${{ github.event.action }}" == "closed" ] && [ "${{ github.event.pull_request.merged }}" == "false" ]; then
+              message="❌ PR closed without merging: #${{ github.event.pull_request.number }} - $pr_link"
+            fi
+          elif [ "${{ github.event_name }}" == "pull_request_review" ] && [ "${{ github.event.review.state }}" == "approved" ]; then
+            message="👍 PR approved by ${{ github.event.review.user.login }}: #${{ github.event.pull_request.number }} - $pr_link"
+          fi
+          echo "TG_SENDER_PAYLOAD_MESSAGE=$message" >> $GITHUB_ENV
+
+      - name: Send Notification to Telegram
+        if: success() # Again, only proceed if the message preparation was successful
+        uses: BorisTestov/tg_sender_action@latest
+        env:
+          TG_SENDER_TG_CHAT_ID: ${{ secrets.CHATID }}
+          TG_SENDER_TG_BOT_TOKEN: ${{ secrets.BotToken }}
+          TG_SENDER_PAYLOAD_MESSAGE: ${{ env.TG_SENDER_PAYLOAD_MESSAGE }}
