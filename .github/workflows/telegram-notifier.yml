@@ -9,7 +9,7 @@ on:
 jobs:
   tg_post_job:
     runs-on: ubuntu-latest
-    name: A job to post data in tg
+    name: A job to post notification on Telegram
 
     steps:
       - name: Prepare message
@@ -17,12 +17,9 @@ jobs:
         run: |
           message="🚀 Hello World!"
           pr_link="${{ github.event.pull_request.html_url }}"
-          pr_title="${{ github.event.pull_request.title }}"
-          pr_author="${{ github.event.pull_request.user.login }}"
-          pr_opened_at="${{ github.event.pull_request.created_at }}"
           if [ "${{ github.event_name }}" == "pull_request" ]; then
             if [ "${{ github.event.action }}" == "opened" ]; then
-              message="🚀 New Token Verification Request!\n\nTitle: $pr_title\nAuthor: $pr_author\nOpened At: $pr_opened_at\nPR Link: $pr_link\n\nPlease review the new submission and verify the token information."
+              message="🚀 New PR created: #${{ github.event.pull_request.number }} by ${{ github.event.pull_request.user.login }} - $pr_link"
             elif [ "${{ github.event.action }}" == "ready_for_review" ]; then
               message="📝 PR is ready for review: #${{ github.event.pull_request.number }} - $pr_link"
             elif [ "${{ github.event.action }}" == "reopened" ]; then
@@ -43,50 +40,3 @@ jobs:
           TG_SENDER_TG_CHAT_ID: ${{ secrets.CHATID }}
           TG_SENDER_TG_BOT_TOKEN: ${{ secrets.BotToken }}
           TG_SENDER_PAYLOAD_MESSAGE: ${{ env.TG_SENDER_PAYLOAD_MESSAGE }}
-
-
-# jobs:
-#   build:
-#     name: Build
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: send telegram message on push
-#         uses: appleboy/telegram-action@master
-#         with:
-#           to: ${{ secrets.BotToken }}
-#           token: ${{ secrets.CHATID }}
-#           message: |
-#             ${{ github.actor }} created commit:
-#             Commit message: ${{ github.event.commits[0].message }}
-            
-#             Repository: ${{ github.repository }}
-            
-#             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
-# name: Notify Telegram
-# on:
-#   issue_comment:
-#     types:
-#       - created
-#   issues:
-#     types: [opened, edited, pinned, closed, reopened, assigned]
-#   pull_request:
-#     types: [opened, closed, edited, ready_for_review, review_requested, reopened]
-#   pull_request_review_comment:
-#     types:
-#       - created
-#   push:
-#     branches:
-#       - main
-
-# jobs:
-#  test:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Test
-#         uses: georgepstaylor/telegram-github-notifier@v0.0.1
-#         with:
-#           telegram_bot_token: ${{ secrets.BotToken }}
-#           telegram_chat_id: ${{ secrets.CHATID }}
-#           gh_event: ${{ toJson(github.event) }}
-#           gh_actor: ${{ github.actor }}
-          
