@@ -18,22 +18,35 @@ on:
       - main
 
 jobs:
-  build:
-    name: Build
+  tg_post_job:
     runs-on: ubuntu-latest
+    name: A job to post data in tg
     steps:
-      - name: send telegram message on push
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.BotToken }}
-          token: ${{ secrets.CHATID }}
-          message: |
-            ${{ github.actor }} created commit:
-            Commit message: ${{ github.event.commits[0].message }}
+      - name: Send data
+        uses: BorisTestov/tg_sender_action@latest
+        env:
+          TG_SENDER_TG_CHAT_ID: ${{ secrets.CHATID }}
+          TG_SENDER_TG_BOT_TOKEN: ${{ secrets.BotToken }}
+          TG_SENDER_PAYLOAD_MESSAGE: "🚀 Hello World!"
+
+
+# jobs:
+#   build:
+#     name: Build
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: send telegram message on push
+#         uses: appleboy/telegram-action@master
+#         with:
+#           to: ${{ secrets.BotToken }}
+#           token: ${{ secrets.CHATID }}
+#           message: |
+#             ${{ github.actor }} created commit:
+#             Commit message: ${{ github.event.commits[0].message }}
             
-            Repository: ${{ github.repository }}
+#             Repository: ${{ github.repository }}
             
-            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+#             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
 # name: Notify Telegram
 # on:
 #   issue_comment:
