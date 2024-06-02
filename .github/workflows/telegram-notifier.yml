@@ -17,9 +17,12 @@ jobs:
         run: |
           message="🚀 Hello World!"
           pr_link="${{ github.event.pull_request.html_url }}"
+          pr_title="${{ github.event.pull_request.title }}"
+          pr_author="${{ github.event.pull_request.user.login }}"
+          pr_opened_at="${{ github.event.pull_request.created_at }}"
           if [ "${{ github.event_name }}" == "pull_request" ]; then
             if [ "${{ github.event.action }}" == "opened" ]; then
-              message="🚀 New PR created: #${{ github.event.pull_request.number }} by ${{ github.event.pull_request.user.login }} - $pr_link"
+              message="🚀 New Token Verification Request!\n\nTitle: $pr_title\nAuthor: $pr_author\nOpened At: $pr_opened_at\nPR Link: $pr_link\n\nPlease review the new submission and verify the token information."
             elif [ "${{ github.event.action }}" == "ready_for_review" ]; then
               message="📝 PR is ready for review: #${{ github.event.pull_request.number }} - $pr_link"
             elif [ "${{ github.event.action }}" == "reopened" ]; then
