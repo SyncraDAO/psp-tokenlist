@@ -15,6 +15,28 @@ jobs:
       - uses: actions/checkout@v4
         name: Checkout Code
 
+      - name: Check Required Files in Subfolders
+        id: check_files
+        run: |
+          missing_files=false
+          error_message="Missing required files:\n"
+          for dir in tokens/psp22/*; do
+            if [ ! -d "$dir" ]; then continue; fi  # Skip if not a directory
+            echo "Checking directory: $dir"
+            if [ ! -f "$dir/info.json" ]; then
+              missing_files=true
+              error_message="${error_message}info.json is missing in $dir\n"
+            fi
+            if [ ! -f "$dir/logo.png" ]; then
+              missing_files=true
+              error_message="${error_message}logo.png is missing in $dir\n"
+            fi
+          done
+          if [ "$missing_files" = true ]; then
+            echo "$error_message"
+            exit 1
+          fi
+
       - name: JSON/YAML Validation
         uses: GrantBirki/json-yaml-validate@v2.7.1
         with:
