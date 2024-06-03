@@ -45,9 +45,10 @@ Paste the JSON structure into the content area. Here is an example template you 
   ],
   "customTags": [
     "burnerWallet",
-    "other_tag"
+    "otherTag"
   ]
 }
+```
 
 After entering the content, use the `Commit changes` button to save the `info.json` file into your new directory. Name branch using contract address of your token and use `Propose changes button`. That will move you to screen for Pull Request creation.
 
