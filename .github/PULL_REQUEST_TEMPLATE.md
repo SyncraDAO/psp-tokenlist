@@ -23,21 +23,27 @@ Please review the checklist below and check each item before submitting your tok
 - **Size**: 256x256 pixels
 - **File Extension**: png
 
+### Metadata File
+- [ ] Metadata file added to the PR
+- **File Name**: `metadata.json`
+- **File Extension**: json
+
 ### Token Information File
 - [ ] Token information file added to the PR
 - **File Name**: `info.json`
 - **File Extension**: json
 
-#### Contents of `info.json`:
+#### Required Content in `info.json`:
 ```json
 {
   "name": "",
   "symbol": "",
   "type": "PSP22",
   "contractAddress": "",
-  "decimals": ,
+  "decimals": 12,
   "description": "",
   "website": "",
+  "sourceCode": "https://github.com/{Github_Username}/{Repository_Name}/path/to/contract",
   "links": [
     {
       "name": "X/Twitter",
@@ -51,6 +57,10 @@ Please review the checklist below and check each item before submitting your tok
       "name": "Discord",
       "url": ""
     }
+  ],
+  "customTags": [
+    "burner_wallet",
+    "other_tag"
   ]
 }
 ```
