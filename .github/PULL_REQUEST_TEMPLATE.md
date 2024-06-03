@@ -64,3 +64,7 @@ Please review the checklist below and check each item before submitting your tok
   ]
 }
 ```
+
+#### Note on Custom Tags
+The `customTags` field in the info.json file is optional. This field can be used to include specific tags that describe unique characteristics or features of the token, such as burner wallet. Include custom tags only if they are relevant to the token’s functionality or usage.
+
