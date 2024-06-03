@@ -25,9 +25,10 @@ Paste the JSON structure into the content area. Here is an example template you 
   "symbol": "",
   "type": "PSP22",
   "contractAddress": "",
-  "decimals": ,
+  "decimals": 12,
   "description": "",
   "website": "",
+  "sourceCode": "https://github.com/{Github_Username}/{Repository_Name}/path/to/contract",
   "links": [
     {
       "name": "X/Twitter",
@@ -41,9 +42,12 @@ Paste the JSON structure into the content area. Here is an example template you 
       "name": "Discord",
       "url": ""
     }
+  ],
+  "customTags": [
+    "burnerWallet",
+    "other_tag"
   ]
 }
-```
 
 After entering the content, use the `Commit changes` button to save the `info.json` file into your new directory. Name branch using contract address of your token and use `Propose changes button`. That will move you to screen for Pull Request creation.
 
