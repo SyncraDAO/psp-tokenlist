@@ -59,8 +59,8 @@ Please review the checklist below and check each item before submitting your tok
     }
   ],
   "customTags": [
-    "burner_wallet",
-    "other_tag"
+    "burnerWallet",
+    "otherTag"
   ]
 }
 ```
