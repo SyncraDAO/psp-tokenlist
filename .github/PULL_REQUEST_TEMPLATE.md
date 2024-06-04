@@ -6,7 +6,7 @@ Before submitting this PR, ensure you have followed all the requirements below a
 ## Checklist
 Please review the checklist below and check each item before submitting your token information:
 
-- [ ] I have reviewed the [submission guidelines](URL_to_guidelines).
+- [ ] I have reviewed the [submission guidelines](https://www.psplist.xyz/why).
 - [ ] The submitted files are in the correct format and fulfill all requirements outlined below.
 
 ## Asset Details
