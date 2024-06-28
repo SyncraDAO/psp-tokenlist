@@ -1,0 +1,25 @@
+{
+  "name": "Test",
+  "symbol": "TST",
+  "type": "PSP22",
+  "contractAddress": "5DuyRY19RZsxnyffwKRSox8rj5VUHf49fHLjUcZpfnwFrYGZ",
+  "decimals": 12,
+  "description": "test",
+  "website": "alephzero.org/",
+  "sourceCode": "https://github.com/{Github_Username}/{Repository_Name}/path/to/contract",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": "https://x.com/Aleph__Zero"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/AlephZeroFoundation"
+    },
+    {
+      "name": "Discord",
+      "url": "https://discord.gg/alephzero"
+    }
+  ],
+  "customTags": [""]
+}
