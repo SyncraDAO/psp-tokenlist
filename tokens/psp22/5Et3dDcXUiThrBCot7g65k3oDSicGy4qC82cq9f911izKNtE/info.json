@@ -1,0 +1,25 @@
+{
+  "name": "Tether USD",
+  "symbol": "USDT",
+  "type": "PSP22",
+  "contractAddress": "5Et3dDcXUiThrBCot7g65k3oDSicGy4qC82cq9f911izKNtE",
+  "decimals": 6,
+  "description": "USDT bridged from Ethereum via Most.",
+  "website": "https://mo.st/",
+  "sourceCode": "https://github.com/Cardinal-Cryptography/most/tree/master/azero/contracts/token",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": "https://x.com/Aleph__Zero"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/AlephZeroFoundation"
+    },
+    {
+      "name": "Discord",
+      "url": "https://discord.gg/alephzero"
+    }
+  ],
+  "customTags": [""]
+}
