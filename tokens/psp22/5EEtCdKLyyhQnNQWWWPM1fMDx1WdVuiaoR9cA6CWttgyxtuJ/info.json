@@ -1,10 +1,10 @@
 {
-  "name": "Wrapped Ether",
-  "symbol": "WETH",
+  "name": "Wrapped BTC",
+  "symbol": "WBTC",
   "type": "PSP22",
-  "contractAddress": "5EoFQd36196Duo6fPTz2MWHXRzwTJcyETHyCyaB3rb61Xo2u",
-  "decimals": 18,
-  "description": "Ether bridged from Ethereum via Most.",
+  "contractAddress": "5EEtCdKLyyhQnNQWWWPM1fMDx1WdVuiaoR9cA6CWttgyxtuJ",
+  "decimals": 8,
+  "description": "WBTC bridged from Ethereum via Most.",
   "website": "https://mo.st/",
   "sourceCode": "https://github.com/Cardinal-Cryptography/most/tree/master/azero/contracts/token",
   "links": [
