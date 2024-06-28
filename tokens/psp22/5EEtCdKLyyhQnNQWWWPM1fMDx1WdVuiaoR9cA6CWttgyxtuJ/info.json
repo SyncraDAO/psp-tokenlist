@@ -1,0 +1,25 @@
+{
+  "name": "Wrapped BTC",
+  "symbol": "WBTC",
+  "type": "PSP22",
+  "contractAddress": "5EEtCdKLyyhQnNQWWWPM1fMDx1WdVuiaoR9cA6CWttgyxtuJ",
+  "decimals": 8,
+  "description": "WBTC bridged from Ethereum via Most.",
+  "website": "https://mo.st/",
+  "sourceCode": "https://github.com/Cardinal-Cryptography/most/tree/master/azero/contracts/token",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": "https://x.com/Aleph__Zero"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/AlephZeroFoundation"
+    },
+    {
+      "name": "Discord",
+      "url": "https://discord.gg/alephzero"
+    }
+  ],
+  "customTags": [""]
+}
