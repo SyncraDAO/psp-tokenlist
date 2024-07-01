@@ -61,10 +61,13 @@ Please review the checklist below and check each item before submitting your tok
   "customTags": [
     "burnerWallet",
     "otherTag"
-  ]
+  ],
+  "warnings": []
 }
 ```
 
 #### Note on Custom Tags
 The `customTags` field in the info.json file is optional. This field can be used to include specific tags that describe unique characteristics or features of the token, such as burner wallet. Include custom tags only if they are relevant to the token’s functionality or usage.
 
+### Note on Warnings
+Please do not fill out the warnings field in the info.json file. This field is reserved for use by our auditing team, who will add relevant warnings such as "Mintable" or "Burnable" after thoroughly reviewing the token's smart contract. This ensures that all warnings are accurate and based on a comprehensive technical assessment.
