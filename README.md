@@ -46,7 +46,8 @@ Paste the JSON structure into the content area. Here is an example template you 
   "customTags": [
     "burnerWallet",
     "otherTag"
-  ]
+  ],
+  "warnings": []
 }
 ```
 
