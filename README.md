@@ -47,7 +47,9 @@ Paste the JSON structure into the content area. Here is an example template you 
     "burnerWallet",
     "otherTag"
   ],
-  "warnings": []
+  "warnings": [],
+  "owner": "",
+  "minter": ""
 }
 ```
 
