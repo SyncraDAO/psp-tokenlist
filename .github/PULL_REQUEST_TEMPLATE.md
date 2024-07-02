@@ -62,12 +62,17 @@ Please review the checklist below and check each item before submitting your tok
     "burnerWallet",
     "otherTag"
   ],
-  "warnings": []
+  "warnings": [],
+  "owner": "ownerAddress",
+  "minter": "minterAddress"
 }
 ```
 
 #### Note on Custom Tags
 The `customTags` field in the info.json file is optional. This field can be used to include specific tags that describe unique characteristics or features of the token, such as burner wallet. Include custom tags only if they are relevant to the token’s functionality or usage.
+
+#### Note on Owner and Minter
+The owner and minter fields should include the addresses of the accounts that hold these capabilities within the token's smart contract. The owner is typically the account that has administrative rights over the entire contract, while the minter might be an account with the capability to issue new tokens.
 
 ### Note on Warnings
 Please do not fill out the warnings field in the info.json file. This field is reserved for use by our auditing team, who will add relevant warnings such as "Mintable" or "Burnable" after thoroughly reviewing the token's smart contract. This ensures that all warnings are accurate and based on a comprehensive technical assessment.

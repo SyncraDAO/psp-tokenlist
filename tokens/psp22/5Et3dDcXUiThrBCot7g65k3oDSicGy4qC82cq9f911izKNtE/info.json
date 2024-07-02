@@ -21,6 +21,8 @@
       "url": "https://discord.gg/alephzero"
     }
   ],
-  "customTags": [""],
-  "warnings": [""]
+  "customTags": [],
+  "warnings": [],
+  "owner": "",
+  "minter": ""
 }
