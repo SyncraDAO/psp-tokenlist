@@ -1,0 +1,30 @@
+{
+    "name": "Ink Whale Token V2",
+    "symbol": "INW2",
+    "type": "PSP22",
+    "contractAddress": "5EA7h2xCP9TkAwEQ8Km2b7aQChPKVCqcS2BJWqYavoXiEsfx",
+    "decimals": 12,
+    "description": "InkWhale - Staking Platform and Launchpad on Aleph Zero",
+    "website": "https://www.inkwhale.net/",
+    "sourceCode": "https://github.com/InkWhale-net/contracts/tree/feature/upgrade-op-4/op4_contracts/contracts/psp22_standard",
+    "links": [
+      {
+        "name": "X/Twitter",
+        "url": "https://x.com/inkwhale_net"
+      },
+      {
+        "name": "Telegram",
+        "url": "https://t.me/inkwhale"
+      },
+      {
+        "name": "Discord",
+        "url": "https://discord.gg/GjERWp3JzU"
+      }
+    ],
+    "customTags": [
+      "burnerWallet",
+      "otherTag"
+    ],
+    "warnings": [],
+    "owner": "5DCQ7mJMNsVWddfru82WpfmHyytyQQ8CFqEcmii4yRefRChi"
+  }
