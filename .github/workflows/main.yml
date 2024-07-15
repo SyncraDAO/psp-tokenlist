@@ -84,8 +84,8 @@ jobs:
 
       - name: Send Notification to Telegram
         if: env.TG_SENDER_PAYLOAD_MESSAGE != '' && success()
-        uses: BorisTestov/tg_sender_action@latest
-        env:
-          TG_SENDER_TG_CHAT_ID: ${{ secrets.CHATID }}
-          TG_SENDER_TG_BOT_TOKEN: ${{ secrets.BotToken }}
-          TG_SENDER_PAYLOAD_MESSAGE: ${{ env.TG_SENDER_PAYLOAD_MESSAGE }}
+        run: |
+          curl -X POST \
+               -H "Content-Type: application/json" \
+               -d '{"chat_id": "${{ secrets.CHATID }}", "text": "${{ env.TG_SENDER_PAYLOAD_MESSAGE }}"}' \
+               "https://api.telegram.org/bot${{ secrets.BotToken }}/sendMessage"
