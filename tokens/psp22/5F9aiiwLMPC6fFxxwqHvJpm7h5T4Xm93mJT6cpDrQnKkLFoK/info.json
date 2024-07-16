@@ -1,0 +1,30 @@
+{
+  "name": "Mr Hankey",
+  "symbol": "SHIT",
+  "type": "PSP22",
+  "contractAddress": "5F9aiiwLMPC6fFxxwqHvJpm7h5T4Xm93mJT6cpDrQnKkLFoK",
+  "decimals": 6,
+  "description": "Most famous meme $SHIT",
+  "website": "https://the-shit.xyz/",
+  "sourceCode": "",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": "https://x.com/mr_hankey_shit"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/mr_hankey_shit"
+    },
+    {
+      "name": "Discord",
+      "url": ""
+    }
+  ],
+  "customTags": [
+    "$SHIT Contract Address"
+  ],
+  "warnings": [],
+  "owner": "5DMCcKK5HuEtSQ9QT9eunuzLy7owhLGX5g77Es9fsoRyhcXj",
+  "minter": "5DMCcKK5HuEtSQ9QT9eunuzLy7owhLGX5g77Es9fsoRyhcXj"
+}
