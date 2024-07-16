@@ -1,0 +1,28 @@
+{
+  "name": "Wrapped AZERO",
+  "symbol": "wAZERO",
+  "type": "PSP22",
+  "contractAddress": "X2tuFVgEUz13SFPVY6s2cZrnLDEkxQXc19aXrNARwEBeCXgg",
+  "decimals": 12,
+  "description": "wrapped AZERO",
+  "website": "alephzero.org/",
+  "sourceCode": "https://github.com/{Github_Username}/{Repository_Name}/path/to/contract",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": "https://x.com/Aleph__Zero"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/AlephZeroFoundation"
+    },
+    {
+      "name": "Discord",
+      "url": "https://discord.gg/alephzero"
+    }
+  ],
+  "customTags": [],
+  "warnings": [],
+  "owner": "",
+  "minter": ""
+}
