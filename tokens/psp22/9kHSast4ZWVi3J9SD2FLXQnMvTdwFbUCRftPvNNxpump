@@ -1,0 +1,31 @@
+{
+  "name": "I Owe You",
+  "symbol": "IOU",
+  "type": "PSP22",
+  "contractAddress": "9kHSast4ZWVi3J9SD2FLXQnMvTdwFbUCRftPvNNxpump",
+  "decimals": 12,
+  "description": "$IOU, short for I Owe You, is an engaging meme token presented by Office Party, exclusively designed for the Aleph Zero ecosystem. In line with the ethos of Office Party, $IOU boasts a commitment to 100% community engagement, humorously coupled with a promise of 100% zero utility.",
+  "website": "https://www.iou.wtf/",
+  "sourceCode": "https://github.com/InkWhale-net/contracts/blob/feature/upgrade-op-4/op4_contracts/contracts/psp22_standard/lib.rs",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": "https://x.com/IOUmeme"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/ioumeme"
+    },
+    {
+      "name": "Discord",
+      "url": "https://discord.gg/3qdqpAUvUN"
+    }
+  ],
+  "customTags": [
+    "burnerWallet",
+    "otherTag"
+  ],
+  "warnings": [It's a meme, trade responsibly],
+  "owner": "5Cu4iSXjW2vhx3akcdmVcD5jdGobQemPHJvQQC2mX4Gad7xs",
+  "minter": "5Cu4iSXjW2vhx3akcdmVcD5jdGobQemPHJvQQC2mX4Gad7xs"
+}
