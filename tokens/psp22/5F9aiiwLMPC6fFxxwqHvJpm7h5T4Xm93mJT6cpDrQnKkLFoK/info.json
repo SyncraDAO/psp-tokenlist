@@ -6,7 +6,7 @@
   "decimals": 12,
   "description": "Most famous meme $SHIT",
   "website": "https://the-shit.xyz/",
-  "sourceCode": "",
+  "sourceCode": "https://github.com/InkWhale-net/contracts/blob/feature/upgrade-op-4/op4_contracts/contracts/psp22_standard/psp22_standard.json",
   "links": [
     {
       "name": "X/Twitter",
@@ -21,9 +21,7 @@
       "url": ""
     }
   ],
-  "customTags": [
-    "$SHIT Contract Address"
-  ],
+  "customTags": ["$SHIT Contract Address"],
   "warnings": [],
   "owner": "5DMCcKK5HuEtSQ9QT9eunuzLy7owhLGX5g77Es9fsoRyhcXj",
   "minter": "5DMCcKK5HuEtSQ9QT9eunuzLy7owhLGX5g77Es9fsoRyhcXj"
