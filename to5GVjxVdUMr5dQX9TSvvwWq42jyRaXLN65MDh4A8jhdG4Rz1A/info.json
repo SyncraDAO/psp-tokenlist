@@ -1,0 +1,31 @@
+{
+  "name": "Azero Kebab",
+  "symbol": "KEBAB",
+  "type": "PSP22",
+  "contractAddress": "5GVjxVdUMr5dQX9TSvvwWq42jyRaXLN65MDh4A8jhdG4Rz1A",
+  "decimals": 12,
+  "description": "100% bio community memetoken",
+  "website": "https://azerokebab.info",
+  "sourceCode": "https://github.com/inkwhale-net/contracts/blob/feature/upgrade-op-4/op4_contracts/contracts/psp22_standard/lib.rs",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": "https://x.com/kebabazero"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/kebabazero"
+    },
+    {
+      "name": "Discord",
+      "url": "https://discord.com/invite/9YvF7rH4AT"
+    }
+  ],
+  "customTags": [
+    "burnerWallet",
+    "otherTag"
+  ],
+  "warnings": [],
+  "owner": "5CAaSJFbLhdKZz9k4icgpoueQjJu6vaTERhYS7rSZbEuQjKb",
+  "minter": "5CAaSJFbLhdKZz9k4icgpoueQjJu6vaTERhYS7rSZbEuQjKb"
+}
