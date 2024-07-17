@@ -12,8 +12,14 @@ jobs:
     steps:
       - name: Log PR Info
         run: |
-          echo "PR Number: ${{ github.event.number }}"
-          echo "Action: ${{ github.event.action }}"
+          if [ "${{ github.event_name }}" == "pull_request_review" ]; then
+            echo "PR Number: ${{ github.event.pull_request.number }}"
+            echo "Action: ${{ github.event.review.state }}"
+          elif [ "${{ github.event_name }}" == "pull_request" ]; then
+            echo "PR Number: ${{ github.event.number }}"
+            echo "Action: ${{ github.event.action }}"
+          else
+            echo "Unhandled event type: ${{ github.event_name }}"
 
   validate_and_notify:
     runs-on: ubuntu-latest
