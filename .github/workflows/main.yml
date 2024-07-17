@@ -12,8 +12,18 @@ jobs:
     steps:
       - name: Log PR Info
         run: |
-          echo "PR Number: ${{ github.event.number }}"
-          echo "Action: ${{ github.event.action }}"
+          if [ "${{ github.event_name }}" == "pull_request_review" ]; then
+              echo "PR Number: ${{ github.event.pull_request.number }}"
+              echo "Action: ${{ github.event.review.state }}"
+          elif [ "${{ github.event_name }}" == "pull_request" ]; then
+              echo "PR Number: ${{ github.event.number }}"
+              echo "Action: ${{ github.event.action }}"
+          else
+              echo "Unhandled event type: ${{ github.event_name }}"
+          fi
+      - name: Debug Information
+        run: |
+          echo "Test var: ${{ secrets.TEST }}"
 
   validate_and_notify:
     runs-on: ubuntu-latest
@@ -84,8 +94,18 @@ jobs:
 
       - name: Send Notification to Telegram
         if: env.TG_SENDER_PAYLOAD_MESSAGE != '' && success()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.BOTTOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.CHATID }}
         run: |
           curl -X POST \
-               -H "Content-Type: application/json" \
-               -d '{"chat_id": "${{ secrets.CHATID }}", "text": "${{ env.TG_SENDER_PAYLOAD_MESSAGE }}"}' \
-               "https://api.telegram.org/bot${{ secrets.BotToken }}/sendMessage"
+              -H "Content-Type: application/json" \
+              -d "{\"chat_id\": \"$TELEGRAM_CHAT_ID\", \"text\": \"${{ env.TG_SENDER_PAYLOAD_MESSAGE }}\"}" \
+              "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage"
+
+        # if: env.TG_SENDER_PAYLOAD_MESSAGE != '' && success()
+        # run: |
+        #   curl -X POST \
+        #        -H "Content-Type: application/json" \
+        #        -d '{"chat_id": "${{ secrets.CHATID }}", "text": "${{ env.TG_SENDER_PAYLOAD_MESSAGE }}"}' \
+        #        "https://api.telegram.org/bot${{ secrets.BotToken }}/sendMessage"
