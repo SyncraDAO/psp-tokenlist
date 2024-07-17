@@ -90,8 +90,18 @@ jobs:
 
       - name: Send Notification to Telegram
         if: env.TG_SENDER_PAYLOAD_MESSAGE != '' && success()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.BOTTOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.CHATID }}
         run: |
           curl -X POST \
-               -H "Content-Type: application/json" \
-               -d '{"chat_id": "${{ secrets.CHATID }}", "text": "${{ env.TG_SENDER_PAYLOAD_MESSAGE }}"}' \
-               "https://api.telegram.org/bot${{ secrets.BotToken }}/sendMessage"
+              -H "Content-Type: application/json" \
+              -d "{\"chat_id\": \"$TELEGRAM_CHAT_ID\", \"text\": \"${{ env.TG_SENDER_PAYLOAD_MESSAGE }}\"}" \
+              "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage"
+
+        # if: env.TG_SENDER_PAYLOAD_MESSAGE != '' && success()
+        # run: |
+        #   curl -X POST \
+        #        -H "Content-Type: application/json" \
+        #        -d '{"chat_id": "${{ secrets.CHATID }}", "text": "${{ env.TG_SENDER_PAYLOAD_MESSAGE }}"}' \
+        #        "https://api.telegram.org/bot${{ secrets.BotToken }}/sendMessage"
