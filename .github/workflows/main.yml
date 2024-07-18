@@ -28,6 +28,9 @@ jobs:
   validate_and_notify:
     runs-on: ubuntu-latest
     name: Validate JSON and Notify on Telegram
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.BOTTOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.CHATID }}
 
     steps:
       - uses: actions/checkout@v4
@@ -92,16 +95,23 @@ jobs:
           fi
           echo "TG_SENDER_PAYLOAD_MESSAGE=$message" >> $GITHUB_ENV
 
+      - name: Verify Secret Access
+        run: |
+          if [ -n "${{ secrets.BOTTOKEN }}" ] && [ -n "${{ secrets.CHATID }}" ]; then
+            echo "Secrets appear to be set"
+          else
+            echo "One or both secrets are not set"
+            exit 1
+          fi
+
       - name: Send Notification to Telegram
         if: env.TG_SENDER_PAYLOAD_MESSAGE != '' && success()
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.BOTTOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.CHATID }}
         run: |
           curl -X POST \
-              -H "Content-Type: application/json" \
-              -d "{\"chat_id\": \"$TELEGRAM_CHAT_ID\", \"text\": \"${{ env.TG_SENDER_PAYLOAD_MESSAGE }}\"}" \
-              "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage"
+               -H "Content-Type: application/json" \
+               -d '{"chat_id": "${{ secrets.CHATID }}", "text": "${{ env.TG_SENDER_PAYLOAD_MESSAGE }}"}' \
+               "https://api.telegram.org/bot${{ secrets.BOTTOKEN }}/sendMessage"
+
 
         # if: env.TG_SENDER_PAYLOAD_MESSAGE != '' && success()
         # run: |
