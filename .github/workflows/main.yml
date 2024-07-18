@@ -21,16 +21,13 @@ jobs:
           else
               echo "Unhandled event type: ${{ github.event_name }}"
           fi
-      - name: Debug Information
-        run: |
-          echo "Test var: ${{ secrets.TEST }}"
 
-  validate_and_notify:
-    runs-on: ubuntu-latest
-    name: Validate JSON and Notify on Telegram
-    env:
-      TELEGRAM_BOT_TOKEN: ${{ secrets.BOTTOKEN }}
-      TELEGRAM_CHAT_ID: ${{ secrets.CHATID }}
+  # validate_and_notify:
+  #   runs-on: ubuntu-latest
+  #   name: Validate JSON and Notify on Telegram
+  #   env:
+  #     TELEGRAM_BOT_TOKEN: ${{ secrets.BOTTOKEN }}
+  #     TELEGRAM_CHAT_ID: ${{ secrets.CHATID }}
 
     steps:
       - uses: actions/checkout@v4
@@ -69,57 +66,57 @@ jobs:
         with:
           comment: "true" # This will post a comment if the validation fails
 
-      - name: Prepare Notification Message
-        if: success() # This will proceed only if the previous validation step was successful
-        run: |
-          message=""
-          pr_link="${{ github.event.pull_request.html_url }}"
-          if [ "${{ github.event_name }}" == "pull_request" ]; then
-            if [ "${{ github.event.action }}" == "opened" ]; then
-              message="🚀 New PR created: #${{ github.event.pull_request.number }} by ${{ github.event.pull_request.user.login }} - $pr_link"
-            elif [ "${{ github.event.action }}" == "ready_for_review" ]; then
-              message="📝 PR is ready for review: #${{ github.event.pull_request.number }} - $pr_link"
-            elif [ "${{ github.event.action }}" == "reopened" ]; then
-              message="🔄 PR reopened: #${{ github.event.pull_request.number }} - $pr_link"
-            elif [ "${{ github.event.action }}" == "closed" ] && [ "${{ github.event.pull_request.merged }}" == "true" ]; then
-              message="✅ PR merged: #${{ github.event.pull_request.number }} - $pr_link"
-            elif [ "${{ github.event.action }}" == "closed" ] && [ "${{ github.event.pull_request.merged }}" == "false" ]; then
-              message="❌ PR closed without merging: #${{ github.event.pull_request.number }} - $pr_link"
-            fi
-          elif [ "${{ github.event_name }}" == "pull_request_review" ] && [ "${{ github.event.review.state }}" == "approved" ]; then
-            message="👍 PR approved by ${{ github.event.review.user.login }}: #${{ github.event.pull_request.number }} - $pr_link"
-          fi
-          if [ -z "$message" ]; then
-            echo "No relevant action taken, skipping notification."
-            exit 0
-          fi
-          echo "TG_SENDER_PAYLOAD_MESSAGE=$message" >> $GITHUB_ENV
+      # - name: Prepare Notification Message
+      #   if: success() # This will proceed only if the previous validation step was successful
+      #   run: |
+      #     message=""
+      #     pr_link="${{ github.event.pull_request.html_url }}"
+      #     if [ "${{ github.event_name }}" == "pull_request" ]; then
+      #       if [ "${{ github.event.action }}" == "opened" ]; then
+      #         message="🚀 New PR created: #${{ github.event.pull_request.number }} by ${{ github.event.pull_request.user.login }} - $pr_link"
+      #       elif [ "${{ github.event.action }}" == "ready_for_review" ]; then
+      #         message="📝 PR is ready for review: #${{ github.event.pull_request.number }} - $pr_link"
+      #       elif [ "${{ github.event.action }}" == "reopened" ]; then
+      #         message="🔄 PR reopened: #${{ github.event.pull_request.number }} - $pr_link"
+      #       elif [ "${{ github.event.action }}" == "closed" ] && [ "${{ github.event.pull_request.merged }}" == "true" ]; then
+      #         message="✅ PR merged: #${{ github.event.pull_request.number }} - $pr_link"
+      #       elif [ "${{ github.event.action }}" == "closed" ] && [ "${{ github.event.pull_request.merged }}" == "false" ]; then
+      #         message="❌ PR closed without merging: #${{ github.event.pull_request.number }} - $pr_link"
+      #       fi
+      #     elif [ "${{ github.event_name }}" == "pull_request_review" ] && [ "${{ github.event.review.state }}" == "approved" ]; then
+      #       message="👍 PR approved by ${{ github.event.review.user.login }}: #${{ github.event.pull_request.number }} - $pr_link"
+      #     fi
+      #     if [ -z "$message" ]; then
+      #       echo "No relevant action taken, skipping notification."
+      #       exit 0
+      #     fi
+      #     echo "TG_SENDER_PAYLOAD_MESSAGE=$message" >> $GITHUB_ENV
 
-      - name: Verify Secret Access
-        run: |
-          if [ -n "${{ secrets.BOTTOKEN }}" ] && [ -n "${{ secrets.CHATID }}" ]; then
-            echo "Secrets appear to be set"
-          else
-            echo "One or both secrets are not set"
-            exit 1
-          fi
+      # - name: Verify Secret Access
+      #   run: |
+      #     if [ -n "${{ secrets.BOTTOKEN }}" ] && [ -n "${{ secrets.CHATID }}" ]; then
+      #       echo "Secrets appear to be set"
+      #     else
+      #       echo "One or both secrets are not set"
+      #       exit 1
+      #     fi
 
-      - name: Send Notification to Telegram
-        if: env.TG_SENDER_PAYLOAD_MESSAGE != '' && success()
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.BOTTOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.CHATID }}
-        run: |
-          response=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
-              -H "Content-Type: application/json" \
-              -d "{\"chat_id\": \"$TELEGRAM_CHAT_ID\", \"text\": \"$TG_SENDER_PAYLOAD_MESSAGE\"}" \
-              "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage")
-          if [ "$response" = "200" ]; then
-            echo "Message sent successfully"
-          else
-            echo "Failed to send message. HTTP status code: $response"
-            exit 1
-          fi
+      # - name: Send Notification to Telegram
+      #   if: env.TG_SENDER_PAYLOAD_MESSAGE != '' && success()
+      #   env:
+      #     TELEGRAM_BOT_TOKEN: ${{ secrets.BOTTOKEN }}
+      #     TELEGRAM_CHAT_ID: ${{ secrets.CHATID }}
+      #   run: |
+      #     response=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
+      #         -H "Content-Type: application/json" \
+      #         -d "{\"chat_id\": \"$TELEGRAM_CHAT_ID\", \"text\": \"$TG_SENDER_PAYLOAD_MESSAGE\"}" \
+      #         "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage")
+      #     if [ "$response" = "200" ]; then
+      #       echo "Message sent successfully"
+      #     else
+      #       echo "Failed to send message. HTTP status code: $response"
+      #       exit 1
+      #     fi
 
         # if: env.TG_SENDER_PAYLOAD_MESSAGE != '' && success()
         # run: |
