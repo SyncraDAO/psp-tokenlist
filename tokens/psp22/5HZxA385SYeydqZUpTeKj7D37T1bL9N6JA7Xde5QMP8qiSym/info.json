@@ -1,0 +1,28 @@
+{
+  "name": "Cats are Liquid",
+  "symbol": "NUKO",
+  "type": "PSP22",
+  "contractAddress": "5HZxA385SYeydqZUpTeKj7D37T1bL9N6JA7Xde5QMP8qiSym",
+  "decimals": 12,
+  "description": "$NUKO is the first cat meme token on @Aleph__Zero",
+  "website": "https://www.nukotoken.org/",
+  "sourceCode": "https://github.com/takeshi-nuko/PSP22-NUKO/blob/main/psp22.json",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": "https://x.com/nukotoken"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/nukotoken"
+    },
+    {
+      "name": "Discord",
+      "url": ""
+    }
+  ],
+  "customTags": ["$NUKO Contract Address"],
+  "warnings": [],
+  "owner": "5HC2nukon6y82uby553npmLVf5MnN1faXjLPqVKUhhY2EJQt",
+  "minter": "5HC2nukon6y82uby553npmLVf5MnN1faXjLPqVKUhhY2EJQt"
+}
