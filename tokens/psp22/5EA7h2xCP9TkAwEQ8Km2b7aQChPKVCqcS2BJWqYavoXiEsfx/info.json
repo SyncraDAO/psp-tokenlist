@@ -6,7 +6,7 @@
     "decimals": 12,
     "description": "InkWhale - Staking Platform and Launchpad on Aleph Zero",
     "website": "https://www.inkwhale.net/",
-    "sourceCode": "https://github.com/InkWhale-net/contracts/tree/feature/upgrade-op-4/op4_contracts/contracts/psp22_standard",
+    "sourceCode": "https://github.com/InkWhale-net/contracts/tree/feature/upgrade-op-4/op4_contracts/contracts/psp22_standard/lib.rs",
     "links": [
       {
         "name": "X/Twitter",
