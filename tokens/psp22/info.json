@@ -1,0 +1,31 @@
+{
+  "name": "ehWolves",
+  "symbol": "ehW",
+  "type": "PSP22",
+  "contractAddress": "5FX8BmkiLxSfKDGoiwN386Pdvb8kcJtGMY37BWxW11Q7ffWz",
+  "decimals": 12,
+  "description": "Community meme token for the ehWolves ecosystem",
+  "website": "https://www.ehwolves.com/",
+  "sourceCode": "https://github.com/InkWhale-net/contracts/blob/feature/upgrade-op-4/op4_contracts/contracts/psp22_standard/psp22_standard.json",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": "https://x.com/ehwolvesnft"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/ehwolvesnft"
+    },
+    {
+      "name": "Discord",
+      "url": "https://discord.gg/ehwolves"
+    }
+  ],
+  "customTags": [
+    "burnerWallet",
+    "otherTag"
+  ],
+  "warnings": [],
+  "owner": "5HNbLgN1ush5nHto3JYCCmeJRw7HUY9SurQT4xZh7icDzxaS",
+  "minter": "5HNbLgN1ush5nHto3JYCCmeJRw7HUY9SurQT4xZh7icDzxaS"
+}
