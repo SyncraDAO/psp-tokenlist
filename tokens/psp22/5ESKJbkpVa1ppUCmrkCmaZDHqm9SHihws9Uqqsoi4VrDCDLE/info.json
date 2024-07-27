@@ -1,0 +1,30 @@
+{
+  "name": "ZPF Token",
+  "symbol": "ZPF",
+  "type": "PSP22",
+  "contractAddress": "5ESKJbkpVa1ppUCmrkCmaZDHqm9SHihws9Uqqsoi4VrDCDLE",
+  "decimals": 12,
+  "description": "Utility Token for ZPF Ecosystem",
+  "website": "https://zapfi.org",
+  "sourceCode": "https://github.com/ZapFi/token/tree/966f67adb0dd2e3a55acf88af17d50340871bf91/sourcecode",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": "https://x.com/zap_finance"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/ZapFiOfficial"
+    },
+    {
+      "name": "Discord",
+      "url": ""
+    }
+  ],
+  "customTags": [
+    "ZPF Contract Address"
+  ],
+  "warnings": [],
+  "owner": "5G1cYC4E5MDs4F32RdaMynyr9Pk9DrsjbquA931UskvojVAg",
+  "minter": "5G1cYC4E5MDs4F32RdaMynyr9Pk9DrsjbquA931UskvojVAg"
+}
