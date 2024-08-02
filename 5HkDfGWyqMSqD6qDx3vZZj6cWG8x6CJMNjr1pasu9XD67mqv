@@ -1,0 +1,31 @@
+{
+  "name": "Mugz",
+  "symbol": "MUGZ",
+  "type": "PSP22",
+  "contractAddress": "5HkDfGWyqMSqD6qDx3vZZj6cWG8x6CJMNjr1pasu9XD67mqv",
+  "decimals": 12,
+  "description": "A meme coin for the culture",
+  "website": "https://nft.xty.world/mugz/",
+  "sourceCode": "https://github.com/{Github_Username}/{Repository_Name}/path/to/contract",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": "https://x.com/GmMugz"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/AzeroGmMugz"
+    },
+    {
+      "name": "Discord",
+      "url": ""
+    }
+  ],
+  "customTags": [
+    "burnerWallet",
+    "otherTag"
+  ],
+  "warnings": [],
+  "owner": "5CaNN33LxWP547Xk1dLYtpTMvL4Z3iCmNX9S3roSkoz8iJE6",
+  "minter": "5CaNN33LxWP547Xk1dLYtpTMvL4Z3iCmNX9S3roSkoz8iJE6"
+}
