@@ -1,0 +1,24 @@
+{
+  "name": "BALD GUY COIN",
+  "symbol": "BALD",
+  "type": "PSP22",
+  "contractAddress": "5GcAeGeAep1PeQA176XYcFMQn8Cc2waVLrsmGX3ruCbKNbR8",
+  "decimals": 12,
+  "description": "NO HAT, NO HAIR, 100% BALD",
+  "website": "baldguy.meme",
+  "sourceCode": "https://github.com/Pendzl/pendzl/blob/9ec1f8b45876ff22f09ff6932cfdcfe61c813f38/examples/psp22_extensions/metadata/lib.rs",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": "https://x.com/baldguycoin"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/baldguycoin"
+    }
+  ],
+  "customTags": [],
+  "warnings": [],
+  "owner": "",
+  "minter": ""
+}
