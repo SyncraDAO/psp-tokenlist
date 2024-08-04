@@ -16,7 +16,7 @@
   "contract": {
     "name": "psp22_token",
     "version": "0.1.0",
-    "authors": ["[Shanty] <[Twarug]>"]
+    "authors": [""]
   },
   "image": null,
   "spec": {
