@@ -1,0 +1,24 @@
+{
+  "name": "projektlol",
+  "symbol": "LOL",
+  "type": "PSP22",
+  "contractAddress": "5DYVFYzBTG8EMWpWQUcZM74nS9PBUnmC8fkCHe9eRZtEQKtQ",
+  "decimals": 12,
+  "description": "Create your own memecoin in just 1 minute!",
+  "website": "https://projekt.lol",
+  "sourceCode": "",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": "https://x.com/projektlol"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/projektlol"
+    }
+  ],
+  "customTags": [],
+  "warnings": [],
+  "owner": "",
+  "minter": ""
+}
