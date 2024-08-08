@@ -1,0 +1,24 @@
+{
+  "name": "DACHSHUND ",
+  "symbol": "DDOG",
+  "type": "PSP22",
+  "contractAddress": "test11111",
+  "decimals": 12,
+  "description": "DACHSHUND $DDOG on AlephZero",
+  "website": "",
+  "sourceCode": "https://github.com/logi144/projektlol-contract-code",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": "https://x.com/dachshundona0?s=21"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/+p19JqqgfpiE1ODUy"
+    }
+  ],
+  "customTags": [],
+  "warnings": [],
+  "owner": "5Gp7WEKbbmGEDqodxTWLUfuY48au1MP81B29Rjtrp9s1yThn",
+  "minter": ""
+}
