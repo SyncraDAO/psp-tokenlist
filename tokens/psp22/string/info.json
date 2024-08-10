@@ -1,0 +1,15 @@
+{
+  "name": "We\u2019re in for the TECH",
+  "symbol": "IFTT",
+  "type": "PSP22",
+  "contractAddress": "string",
+  "decimals": 12,
+  "description": "All OGs can relate. We\u2019re in for the tech .. let\u2019s immortalise this",
+  "website": "",
+  "sourceCode": "https://github.com/logi144/projektlol-contract-code",
+  "links": [],
+  "customTags": [],
+  "warnings": [],
+  "owner": "5EeTHvBFP61kgTYDmRmT1TEQCUWkxQsYd43DJShTyoTLBB4w",
+  "minter": ""
+}
