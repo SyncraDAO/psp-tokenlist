@@ -1,0 +1,15 @@
+{
+  "name": "The Hat",
+  "symbol": "HAT",
+  "type": "PSP22",
+  "contractAddress": "stringum",
+  "decimals": 12,
+  "description": "A tribute to our brave soldier Hatworthy! ",
+  "website": "",
+  "sourceCode": "https://github.com/logi144/projektlol-contract-code",
+  "links": [],
+  "customTags": [],
+  "warnings": [],
+  "owner": "5HB7K9r4aF2RHxEnP4z1iWCo6A4WmPwoWkcFMsBPZZrgjXkZ",
+  "minter": ""
+}
