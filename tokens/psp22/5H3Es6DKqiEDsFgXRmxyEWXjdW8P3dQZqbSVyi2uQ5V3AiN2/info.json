@@ -1,0 +1,20 @@
+{
+  "name": "Shooter Man Olympics",
+  "symbol": "SMO",
+  "type": "PSP22",
+  "contractAddress": "5H3Es6DKqiEDsFgXRmxyEWXjdW8P3dQZqbSVyi2uQ5V3AiN2",
+  "decimals": 12,
+  "description": "Turkey sent a 51 yr old guy with no specialized lenses, eye cover or ear protection and got the silver medal",
+  "website": "",
+  "sourceCode": "https://github.com/logi144/projektlol-contract-code",
+  "links": [
+    {
+      "name": "Telegram",
+      "url": "https://t.me/+VenC23iW7FZkNGQ0"
+    }
+  ],
+  "customTags": [],
+  "warnings": [],
+  "owner": "5GqCkS5gMX5YqqVSqnRAg3ChtfRoK5Kq1Q2kWuDGGVSfAbK7",
+  "minter": ""
+}
