@@ -1,0 +1,20 @@
+{
+  "name": "Sins Of Azero",
+  "symbol": "SINS",
+  "type": "PSP22",
+  "contractAddress": "5Fv3RC3eDf1cb2m4BceiFVgZdRmK4fjD8U9xhDjmZy4NPNx9",
+  "decimals": 12,
+  "description": "\"They say money is the root of all evil,\" so we created the most virtuous coin! As solid as the Azero network and cheaper than your morning coffee. Don\u2019t sin in the crypto world, choose SINS Coin!",
+  "website": "",
+  "sourceCode": "https://github.com/logi144/projektlol-contract-code",
+  "links": [
+    {
+      "name": "Telegram",
+      "url": "https://t.me/+hJ-Ck986DecwMDNk"
+    }
+  ],
+  "customTags": [],
+  "warnings": [],
+  "owner": "5GqCkS5gMX5YqqVSqnRAg3ChtfRoK5Kq1Q2kWuDGGVSfAbK7",
+  "minter": ""
+}
