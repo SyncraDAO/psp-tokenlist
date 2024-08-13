@@ -1,1 +1,31 @@
-
+{
+  "name": "Staking Capital",
+  "symbol": "SC",
+  "type": "PSP22",
+  "contractAddress": "5G1LVy9K5uapJE9uzG1NbMN4bTKJEyKLMtKGAtqdgbLDegNF",
+  "decimals": 12,
+  "description": "",
+  "website": "",
+  "sourceCode": "https://github.com/{Github_Username}/{Repository_Name}/path/to/contract",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": "https://x.com/staking_capital"
+    },
+    {
+      "name": "Telegram",
+      "url": ""
+    },
+    {
+      "name": "Discord",
+      "url": ""
+    }
+  ],
+  "customTags": [
+    "burnerWallet",
+    "otherTag"
+  ],
+  "warnings": [],
+  "owner": "",
+  "minter": ""
+}
