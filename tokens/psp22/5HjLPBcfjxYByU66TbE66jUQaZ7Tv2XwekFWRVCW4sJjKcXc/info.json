@@ -1,0 +1,20 @@
+{
+  "name": "BOBR KURWA",
+  "symbol": "BOBR",
+  "type": "PSP22",
+  "contractAddress": "5HjLPBcfjxYByU66TbE66jUQaZ7Tv2XwekFWRVCW4sJjKcXc",
+  "decimals": 12,
+  "description": "fuck, what a beast",
+  "website": "",
+  "sourceCode": "https://github.com/logi144/projektlol-contract-code",
+  "links": [
+    {
+      "name": "Telegram",
+      "url": "https://t.me/kurwa_bobr_azero"
+    }
+  ],
+  "customTags": [],
+  "warnings": [],
+  "owner": "5E7PkwuNpCf8LqJfyAgm1qPz9pRAZvMnqyYYypCjyzrKy5fs",
+  "minter": ""
+}
