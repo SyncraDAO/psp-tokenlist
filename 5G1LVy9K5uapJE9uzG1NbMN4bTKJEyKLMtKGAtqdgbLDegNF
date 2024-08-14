@@ -6,7 +6,7 @@
   "decimals": 12,
   "description": "",
   "website": "",
-  "sourceCode": "https://github.com/{Github_Username}/{Repository_Name}/path/to/contract",
+  "sourceCode": "https://github.com/InkWhale-net/contracts/blob/feature/upgrade-op-4/contracts/psp22_standard/lib.rs",
   "links": [
     {
       "name": "X/Twitter",
@@ -26,6 +26,6 @@
     "otherTag"
   ],
   "warnings": [],
-  "owner": "",
+  "owner": "5Gp7WEKbbmGEDqodxTWLUfuY48au1MP81B29Rjtrp9s1yThn",
   "minter": ""
 }
