@@ -11,20 +11,9 @@
     {
       "name": "X/Twitter",
       "url": "https://x.com/staking_capital"
-    },
-    {
-      "name": "Telegram",
-      "url": ""
-    },
-    {
-      "name": "Discord",
-      "url": ""
     }
   ],
-  "customTags": [
-    "burnerWallet",
-    "otherTag"
-  ],
+  "customTags": [],
   "warnings": [],
   "owner": "5Gp7WEKbbmGEDqodxTWLUfuY48au1MP81B29Rjtrp9s1yThn",
   "minter": "5Gp7WEKbbmGEDqodxTWLUfuY48au1MP81B29Rjtrp9s1yThn"
