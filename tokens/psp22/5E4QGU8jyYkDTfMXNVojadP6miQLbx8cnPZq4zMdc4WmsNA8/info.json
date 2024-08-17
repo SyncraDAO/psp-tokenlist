@@ -1,0 +1,20 @@
+{
+  "name": "ARCANA",
+  "symbol": "ARC",
+  "type": "PSP22",
+  "contractAddress": "5E4QGU8jyYkDTfMXNVojadP6miQLbx8cnPZq4zMdc4WmsNA8",
+  "decimals": 12,
+  "description": "Hybrid MemeCoin x PFP Collection on Aleph Zero: Blending Hip-Hop, Memes & the Anon Artistry",
+  "website": "",
+  "sourceCode": "https://github.com/logi144/projektlol-contract-code",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": "https://x.com/arcana_azero"
+    }
+  ],
+  "customTags": [],
+  "warnings": [],
+  "owner": "5HCBRrucHhJWoXXcPD7vZWeSC8GiNbMXuT2pmpwxXRqDUPT9",
+  "minter": ""
+}
