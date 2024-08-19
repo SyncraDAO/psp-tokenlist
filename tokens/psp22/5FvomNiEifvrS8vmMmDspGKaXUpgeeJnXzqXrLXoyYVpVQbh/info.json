@@ -1,0 +1,24 @@
+{
+  "name": "Common",
+  "symbol": "CMON",
+  "type": "PSP22",
+  "contractAddress": "5FvomNiEifvrS8vmMmDspGKaXUpgeeJnXzqXrLXoyYVpVQbh",
+  "decimals": 12,
+  "description": "C'mon, do something!",
+  "website": "https://common.fi/",
+  "sourceCode": "https://github.com/logi144/projektlol-contract-code",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": "https://x.com/common_meme"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/common_fi"
+    }
+  ],
+  "customTags": [],
+  "warnings": [],
+  "owner": "",
+  "minter": ""
+}
