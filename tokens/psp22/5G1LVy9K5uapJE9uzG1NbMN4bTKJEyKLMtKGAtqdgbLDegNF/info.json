@@ -1,0 +1,20 @@
+{
+  "name": "Staking Capital",
+  "symbol": "SC",
+  "type": "PSP22",
+  "contractAddress": "5G1LVy9K5uapJE9uzG1NbMN4bTKJEyKLMtKGAtqdgbLDegNF",
+  "decimals": 12,
+  "description": "",
+  "website": "",
+  "sourceCode": "https://github.com/InkWhale-net/contracts/blob/bea744a901f5e1424d4a8a883851bb14b1b1514e/op4_contracts/contracts/psp22_standard/lib.rs",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": "https://x.com/staking_capital"
+    }
+  ],
+  "customTags": [],
+  "warnings": [],
+  "owner": "5Gp7WEKbbmGEDqodxTWLUfuY48au1MP81B29Rjtrp9s1yThn",
+  "minter": "5Gp7WEKbbmGEDqodxTWLUfuY48au1MP81B29Rjtrp9s1yThn"
+}
