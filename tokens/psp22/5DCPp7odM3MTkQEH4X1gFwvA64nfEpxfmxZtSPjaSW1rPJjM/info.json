@@ -1,0 +1,24 @@
+{
+  "name": "baldawifhat",
+  "symbol": "balda",
+  "type": "PSP22",
+  "contractAddress": "5DCPp7odM3MTkQEH4X1gFwvA64nfEpxfmxZtSPjaSW1rPJjM",
+  "decimals": 12,
+  "description": "vibe wif frens onchain, but private. no bald, just hat",
+  "website": "",
+  "sourceCode": "https://github.com/Smart-Beaver/smart-contracts/tree/main/PSP22",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": "https://x.com/baldawifhat"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/baldawifhat"
+    }
+  ],
+  "customTags": [],
+  "warnings": [],
+  "owner": "",
+  "minter": ""
+}
