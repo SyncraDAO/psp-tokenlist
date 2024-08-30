@@ -1,0 +1,20 @@
+{
+  "name": "Secret Service Bunnys",
+  "symbol": "SEBY",
+  "type": "PSP22",
+  "contractAddress": "5Gpj9qiRheTZSmBz8wZYmrvrY9UjzqYWc6PVedLTBJhy63Db",
+  "decimals": 12,
+  "description": "Secret Service Bunnys is a crypto token project that builds a comprehensive ecosystem featuring a DAO, Exclusive benefits for Token holders, a Videogame and much more. \n\nThe Project Focused on supporting businesses and freelancers, it offers competitively priced services that outperform rivals. The goal is to deliver world-class, value-added solutions while remaining affordable. Token holders gain access to unique prodcuts.",
+  "website": "https://secretservicebunnys.framer.ai/",
+  "sourceCode": "https://github.com/logi144/projektlol-contract-code",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": "https://x.com/RedSecretBunnys"
+    }
+  ],
+  "customTags": [],
+  "warnings": [],
+  "owner": "",
+  "minter": ""
+}
