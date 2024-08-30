@@ -1,0 +1,20 @@
+{
+  "name": "VIB3S",
+  "symbol": "VIB3",
+  "type": "PSP22",
+  "contractAddress": "5FmiAwHBR9buMwUhSC4Mhj6WqnLVaYeyyXjjJYyfNwKnYhBN",
+  "decimals": 12,
+  "description": "Welcome to the future of sports and entertainment on Aleph Zero. VIB3S increases brand loyalty with new retention and engagement tools for sports and entertainment organizations.",
+  "website": "",
+  "sourceCode": "https://github.com/logi144/projektlol-contract-code",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": "https://x.com/vib3s_com"
+    }
+  ],
+  "customTags": [],
+  "warnings": [],
+  "owner": "",
+  "minter": ""
+}
