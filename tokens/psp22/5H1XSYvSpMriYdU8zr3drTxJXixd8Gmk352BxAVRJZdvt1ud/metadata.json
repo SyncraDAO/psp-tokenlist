@@ -1,0 +1,1320 @@
+{
+  "source": {
+    "hash": "0x7625f4c6dee618f6bb1d951550d63939890ef6e6e5be1dc2b32772a1f90ca48b",
+    "language": "ink! 4.3.0",
+    "compiler": "rustc 1.72.1",
+    "build_info": {
+      "build_mode": "Release",
+      "cargo_contract_version": "3.2.0",
+      "rust_toolchain": "stable-x86_64-apple-darwin",
+      "wasm_opt_settings": {
+        "keep_debug_symbols": false,
+        "optimization_passes": "Z"
+      }
+    }
+  },
+  "contract": {
+    "name": "az_button",
+    "version": "3.0.0",
+    "authors": [
+      "btn.group"
+    ]
+  },
+  "spec": {
+    "constructors": [
+      {
+        "args": [
+          {
+            "label": "cap",
+            "type": {
+              "displayName": [
+                "Balance"
+              ],
+              "type": 0
+            }
+          },
+          {
+            "label": "name",
+            "type": {
+              "displayName": [
+                "Option"
+              ],
+              "type": 3
+            }
+          },
+          {
+            "label": "symbol",
+            "type": {
+              "displayName": [
+                "Option"
+              ],
+              "type": 3
+            }
+          },
+          {
+            "label": "decimal",
+            "type": {
+              "displayName": [
+                "u8"
+              ],
+              "type": 2
+            }
+          }
+        ],
+        "default": false,
+        "docs": [],
+        "label": "new",
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink_primitives",
+            "ConstructorResult"
+          ],
+          "type": 4
+        },
+        "selector": "0x9bae9d5e"
+      }
+    ],
+    "docs": [],
+    "environment": {
+      "accountId": {
+        "displayName": [
+          "AccountId"
+        ],
+        "type": 7
+      },
+      "balance": {
+        "displayName": [
+          "Balance"
+        ],
+        "type": 0
+      },
+      "blockNumber": {
+        "displayName": [
+          "BlockNumber"
+        ],
+        "type": 20
+      },
+      "chainExtension": {
+        "displayName": [
+          "ChainExtension"
+        ],
+        "type": 21
+      },
+      "hash": {
+        "displayName": [
+          "Hash"
+        ],
+        "type": 19
+      },
+      "maxEventTopics": 4,
+      "timestamp": {
+        "displayName": [
+          "Timestamp"
+        ],
+        "type": 13
+      }
+    },
+    "events": [
+      {
+        "args": [
+          {
+            "docs": [],
+            "indexed": true,
+            "label": "from",
+            "type": {
+              "displayName": [
+                "Option"
+              ],
+              "type": 18
+            }
+          },
+          {
+            "docs": [],
+            "indexed": true,
+            "label": "to",
+            "type": {
+              "displayName": [
+                "Option"
+              ],
+              "type": 18
+            }
+          },
+          {
+            "docs": [],
+            "indexed": false,
+            "label": "value",
+            "type": {
+              "displayName": [
+                "Balance"
+              ],
+              "type": 0
+            }
+          }
+        ],
+        "docs": [
+          "Event emitted when a token transfer occurs."
+        ],
+        "label": "Transfer"
+      },
+      {
+        "args": [
+          {
+            "docs": [],
+            "indexed": true,
+            "label": "owner",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 7
+            }
+          },
+          {
+            "docs": [],
+            "indexed": true,
+            "label": "spender",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 7
+            }
+          },
+          {
+            "docs": [],
+            "indexed": false,
+            "label": "value",
+            "type": {
+              "displayName": [
+                "Balance"
+              ],
+              "type": 0
+            }
+          }
+        ],
+        "docs": [
+          "Event emitted when an approval occurs that `spender` is allowed to withdraw",
+          "up to the amount of `value` tokens from `owner`."
+        ],
+        "label": "Approval"
+      }
+    ],
+    "lang_error": {
+      "displayName": [
+        "ink",
+        "LangError"
+      ],
+      "type": 6
+    },
+    "messages": [
+      {
+        "args": [
+          {
+            "label": "account",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 7
+            }
+          },
+          {
+            "label": "amount",
+            "type": {
+              "displayName": [
+                "Balance"
+              ],
+              "type": 0
+            }
+          }
+        ],
+        "default": false,
+        "docs": [],
+        "label": "burn",
+        "mutates": true,
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 9
+        },
+        "selector": "0xb1efc17b"
+      },
+      {
+        "args": [
+          {
+            "label": "to",
+            "type": {
+              "displayName": [
+                "psp22_external",
+                "TransferInput1"
+              ],
+              "type": 7
+            }
+          },
+          {
+            "label": "value",
+            "type": {
+              "displayName": [
+                "psp22_external",
+                "TransferInput2"
+              ],
+              "type": 0
+            }
+          },
+          {
+            "label": "data",
+            "type": {
+              "displayName": [
+                "psp22_external",
+                "TransferInput3"
+              ],
+              "type": 14
+            }
+          }
+        ],
+        "default": false,
+        "docs": [],
+        "label": "PSP22::transfer",
+        "mutates": true,
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 9
+        },
+        "selector": "0xdb20f9f5"
+      },
+      {
+        "args": [
+          {
+            "label": "spender",
+            "type": {
+              "displayName": [
+                "psp22_external",
+                "DecreaseAllowanceInput1"
+              ],
+              "type": 7
+            }
+          },
+          {
+            "label": "delta_value",
+            "type": {
+              "displayName": [
+                "psp22_external",
+                "DecreaseAllowanceInput2"
+              ],
+              "type": 0
+            }
+          }
+        ],
+        "default": false,
+        "docs": [],
+        "label": "PSP22::decrease_allowance",
+        "mutates": true,
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 9
+        },
+        "selector": "0xfecb57d5"
+      },
+      {
+        "args": [
+          {
+            "label": "owner",
+            "type": {
+              "displayName": [
+                "psp22_external",
+                "BalanceOfInput1"
+              ],
+              "type": 7
+            }
+          }
+        ],
+        "default": false,
+        "docs": [],
+        "label": "PSP22::balance_of",
+        "mutates": false,
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 15
+        },
+        "selector": "0x6568382f"
+      },
+      {
+        "args": [
+          {
+            "label": "spender",
+            "type": {
+              "displayName": [
+                "psp22_external",
+                "IncreaseAllowanceInput1"
+              ],
+              "type": 7
+            }
+          },
+          {
+            "label": "delta_value",
+            "type": {
+              "displayName": [
+                "psp22_external",
+                "IncreaseAllowanceInput2"
+              ],
+              "type": 0
+            }
+          }
+        ],
+        "default": false,
+        "docs": [],
+        "label": "PSP22::increase_allowance",
+        "mutates": true,
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 9
+        },
+        "selector": "0x96d6b57a"
+      },
+      {
+        "args": [
+          {
+            "label": "from",
+            "type": {
+              "displayName": [
+                "psp22_external",
+                "TransferFromInput1"
+              ],
+              "type": 7
+            }
+          },
+          {
+            "label": "to",
+            "type": {
+              "displayName": [
+                "psp22_external",
+                "TransferFromInput2"
+              ],
+              "type": 7
+            }
+          },
+          {
+            "label": "value",
+            "type": {
+              "displayName": [
+                "psp22_external",
+                "TransferFromInput3"
+              ],
+              "type": 0
+            }
+          },
+          {
+            "label": "data",
+            "type": {
+              "displayName": [
+                "psp22_external",
+                "TransferFromInput4"
+              ],
+              "type": 14
+            }
+          }
+        ],
+        "default": false,
+        "docs": [],
+        "label": "PSP22::transfer_from",
+        "mutates": true,
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 9
+        },
+        "selector": "0x54b3c76e"
+      },
+      {
+        "args": [],
+        "default": false,
+        "docs": [],
+        "label": "PSP22::total_supply",
+        "mutates": false,
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 15
+        },
+        "selector": "0x162df8c2"
+      },
+      {
+        "args": [
+          {
+            "label": "owner",
+            "type": {
+              "displayName": [
+                "psp22_external",
+                "AllowanceInput1"
+              ],
+              "type": 7
+            }
+          },
+          {
+            "label": "spender",
+            "type": {
+              "displayName": [
+                "psp22_external",
+                "AllowanceInput2"
+              ],
+              "type": 7
+            }
+          }
+        ],
+        "default": false,
+        "docs": [],
+        "label": "PSP22::allowance",
+        "mutates": false,
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 15
+        },
+        "selector": "0x4d47d921"
+      },
+      {
+        "args": [],
+        "default": false,
+        "docs": [],
+        "label": "PSP22Metadata::token_name",
+        "mutates": false,
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 16
+        },
+        "selector": "0x3d261bd4"
+      },
+      {
+        "args": [],
+        "default": false,
+        "docs": [],
+        "label": "PSP22Metadata::token_symbol",
+        "mutates": false,
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 16
+        },
+        "selector": "0x34205be5"
+      },
+      {
+        "args": [],
+        "default": false,
+        "docs": [],
+        "label": "PSP22Metadata::token_decimals",
+        "mutates": false,
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 17
+        },
+        "selector": "0x7271b782"
+      },
+      {
+        "args": [],
+        "default": false,
+        "docs": [],
+        "label": "PSP22Capped::cap",
+        "mutates": false,
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 15
+        },
+        "selector": "0xf40366b4"
+      }
+    ]
+  },
+  "storage": {
+    "root": {
+      "layout": {
+        "struct": {
+          "fields": [
+            {
+              "layout": {
+                "struct": {
+                  "fields": [
+                    {
+                      "layout": {
+                        "root": {
+                          "layout": {
+                            "leaf": {
+                              "key": "0x270a8fc3",
+                              "ty": 0
+                            }
+                          },
+                          "root_key": "0x270a8fc3"
+                        }
+                      },
+                      "name": "supply"
+                    },
+                    {
+                      "layout": {
+                        "root": {
+                          "layout": {
+                            "leaf": {
+                              "key": "0xc2664826",
+                              "ty": 0
+                            }
+                          },
+                          "root_key": "0xc2664826"
+                        }
+                      },
+                      "name": "balances"
+                    },
+                    {
+                      "layout": {
+                        "root": {
+                          "layout": {
+                            "leaf": {
+                              "key": "0xf8d71e22",
+                              "ty": 0
+                            }
+                          },
+                          "root_key": "0xf8d71e22"
+                        }
+                      },
+                      "name": "allowances"
+                    }
+                  ],
+                  "name": "Data"
+                }
+              },
+              "name": "psp22"
+            },
+            {
+              "layout": {
+                "struct": {
+                  "fields": [
+                    {
+                      "layout": {
+                        "root": {
+                          "layout": {
+                            "enum": {
+                              "dispatchKey": "0x90a00b7d",
+                              "name": "Option",
+                              "variants": {
+                                "0": {
+                                  "fields": [],
+                                  "name": "None"
+                                },
+                                "1": {
+                                  "fields": [
+                                    {
+                                      "layout": {
+                                        "leaf": {
+                                          "key": "0x90a00b7d",
+                                          "ty": 1
+                                        }
+                                      },
+                                      "name": "0"
+                                    }
+                                  ],
+                                  "name": "Some"
+                                }
+                              }
+                            }
+                          },
+                          "root_key": "0x90a00b7d"
+                        }
+                      },
+                      "name": "name"
+                    },
+                    {
+                      "layout": {
+                        "root": {
+                          "layout": {
+                            "enum": {
+                              "dispatchKey": "0xf8019f84",
+                              "name": "Option",
+                              "variants": {
+                                "0": {
+                                  "fields": [],
+                                  "name": "None"
+                                },
+                                "1": {
+                                  "fields": [
+                                    {
+                                      "layout": {
+                                        "leaf": {
+                                          "key": "0xf8019f84",
+                                          "ty": 1
+                                        }
+                                      },
+                                      "name": "0"
+                                    }
+                                  ],
+                                  "name": "Some"
+                                }
+                              }
+                            }
+                          },
+                          "root_key": "0xf8019f84"
+                        }
+                      },
+                      "name": "symbol"
+                    },
+                    {
+                      "layout": {
+                        "root": {
+                          "layout": {
+                            "leaf": {
+                              "key": "0xd29264d8",
+                              "ty": 2
+                            }
+                          },
+                          "root_key": "0xd29264d8"
+                        }
+                      },
+                      "name": "decimals"
+                    }
+                  ],
+                  "name": "Data"
+                }
+              },
+              "name": "metadata"
+            },
+            {
+              "layout": {
+                "struct": {
+                  "fields": [
+                    {
+                      "layout": {
+                        "root": {
+                          "layout": {
+                            "leaf": {
+                              "key": "0x5fd98c24",
+                              "ty": 0
+                            }
+                          },
+                          "root_key": "0x5fd98c24"
+                        }
+                      },
+                      "name": "cap"
+                    }
+                  ],
+                  "name": "Data"
+                }
+              },
+              "name": "cap"
+            }
+          ],
+          "name": "Button"
+        }
+      },
+      "root_key": "0x00000000"
+    }
+  },
+  "types": [
+    {
+      "id": 0,
+      "type": {
+        "def": {
+          "primitive": "u128"
+        }
+      }
+    },
+    {
+      "id": 1,
+      "type": {
+        "def": {
+          "primitive": "str"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "type": {
+        "def": {
+          "primitive": "u8"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "index": 0,
+                "name": "None"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 1
+                  }
+                ],
+                "index": 1,
+                "name": "Some"
+              }
+            ]
+          }
+        },
+        "params": [
+          {
+            "name": "T",
+            "type": 1
+          }
+        ],
+        "path": [
+          "Option"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "fields": [
+                  {
+                    "type": 5
+                  }
+                ],
+                "index": 0,
+                "name": "Ok"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 6
+                  }
+                ],
+                "index": 1,
+                "name": "Err"
+              }
+            ]
+          }
+        },
+        "params": [
+          {
+            "name": "T",
+            "type": 5
+          },
+          {
+            "name": "E",
+            "type": 6
+          }
+        ],
+        "path": [
+          "Result"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "type": {
+        "def": {
+          "tuple": []
+        }
+      }
+    },
+    {
+      "id": 6,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "index": 1,
+                "name": "CouldNotReadInput"
+              }
+            ]
+          }
+        },
+        "path": [
+          "ink_primitives",
+          "LangError"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "type": {
+        "def": {
+          "composite": {
+            "fields": [
+              {
+                "type": 8,
+                "typeName": "[u8; 32]"
+              }
+            ]
+          }
+        },
+        "path": [
+          "ink_primitives",
+          "types",
+          "AccountId"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "type": {
+        "def": {
+          "array": {
+            "len": 32,
+            "type": 2
+          }
+        }
+      }
+    },
+    {
+      "id": 9,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "fields": [
+                  {
+                    "type": 10
+                  }
+                ],
+                "index": 0,
+                "name": "Ok"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 6
+                  }
+                ],
+                "index": 1,
+                "name": "Err"
+              }
+            ]
+          }
+        },
+        "params": [
+          {
+            "name": "T",
+            "type": 10
+          },
+          {
+            "name": "E",
+            "type": 6
+          }
+        ],
+        "path": [
+          "Result"
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "fields": [
+                  {
+                    "type": 5
+                  }
+                ],
+                "index": 0,
+                "name": "Ok"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 11
+                  }
+                ],
+                "index": 1,
+                "name": "Err"
+              }
+            ]
+          }
+        },
+        "params": [
+          {
+            "name": "T",
+            "type": 5
+          },
+          {
+            "name": "E",
+            "type": 11
+          }
+        ],
+        "path": [
+          "Result"
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "fields": [
+                  {
+                    "type": 1,
+                    "typeName": "String"
+                  }
+                ],
+                "index": 0,
+                "name": "Custom"
+              },
+              {
+                "index": 1,
+                "name": "InsufficientBalance"
+              },
+              {
+                "index": 2,
+                "name": "InsufficientAllowance"
+              },
+              {
+                "index": 3,
+                "name": "RecipientIsNotSet"
+              },
+              {
+                "index": 4,
+                "name": "SenderIsNotSet"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 1,
+                    "typeName": "String"
+                  }
+                ],
+                "index": 5,
+                "name": "SafeTransferCheckFailed"
+              },
+              {
+                "index": 6,
+                "name": "PermitInvalidSignature"
+              },
+              {
+                "index": 7,
+                "name": "PermitExpired"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 12,
+                    "typeName": "NoncesError"
+                  }
+                ],
+                "index": 8,
+                "name": "NoncesError"
+              }
+            ]
+          }
+        },
+        "path": [
+          "openbrush_contracts",
+          "traits",
+          "errors",
+          "psp22",
+          "PSP22Error"
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "fields": [
+                  {
+                    "type": 7,
+                    "typeName": "AccountId"
+                  },
+                  {
+                    "type": 13,
+                    "typeName": "u64"
+                  }
+                ],
+                "index": 0,
+                "name": "InvalidAccountNonce"
+              },
+              {
+                "index": 1,
+                "name": "NonceOverflow"
+              }
+            ]
+          }
+        },
+        "path": [
+          "openbrush_contracts",
+          "traits",
+          "errors",
+          "nonces",
+          "NoncesError"
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "type": {
+        "def": {
+          "primitive": "u64"
+        }
+      }
+    },
+    {
+      "id": 14,
+      "type": {
+        "def": {
+          "sequence": {
+            "type": 2
+          }
+        }
+      }
+    },
+    {
+      "id": 15,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "fields": [
+                  {
+                    "type": 0
+                  }
+                ],
+                "index": 0,
+                "name": "Ok"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 6
+                  }
+                ],
+                "index": 1,
+                "name": "Err"
+              }
+            ]
+          }
+        },
+        "params": [
+          {
+            "name": "T",
+            "type": 0
+          },
+          {
+            "name": "E",
+            "type": 6
+          }
+        ],
+        "path": [
+          "Result"
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "fields": [
+                  {
+                    "type": 3
+                  }
+                ],
+                "index": 0,
+                "name": "Ok"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 6
+                  }
+                ],
+                "index": 1,
+                "name": "Err"
+              }
+            ]
+          }
+        },
+        "params": [
+          {
+            "name": "T",
+            "type": 3
+          },
+          {
+            "name": "E",
+            "type": 6
+          }
+        ],
+        "path": [
+          "Result"
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "fields": [
+                  {
+                    "type": 2
+                  }
+                ],
+                "index": 0,
+                "name": "Ok"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 6
+                  }
+                ],
+                "index": 1,
+                "name": "Err"
+              }
+            ]
+          }
+        },
+        "params": [
+          {
+            "name": "T",
+            "type": 2
+          },
+          {
+            "name": "E",
+            "type": 6
+          }
+        ],
+        "path": [
+          "Result"
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "index": 0,
+                "name": "None"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 7
+                  }
+                ],
+                "index": 1,
+                "name": "Some"
+              }
+            ]
+          }
+        },
+        "params": [
+          {
+            "name": "T",
+            "type": 7
+          }
+        ],
+        "path": [
+          "Option"
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "type": {
+        "def": {
+          "composite": {
+            "fields": [
+              {
+                "type": 8,
+                "typeName": "[u8; 32]"
+              }
+            ]
+          }
+        },
+        "path": [
+          "ink_primitives",
+          "types",
+          "Hash"
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "type": {
+        "def": {
+          "primitive": "u32"
+        }
+      }
+    },
+    {
+      "id": 21,
+      "type": {
+        "def": {
+          "variant": {}
+        },
+        "path": [
+          "ink_env",
+          "types",
+          "NoChainExtension"
+        ]
+      }
+    }
+  ],
+  "version": "4"
+}
