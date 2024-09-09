@@ -1,0 +1,24 @@
+{
+  "name": "Test",
+  "symbol": "TST",
+  "contractAddress": "5GrpknVvGGrGH3EFuURXeMrWHvbpj3VfER1oX5jFtuGbfzCE",
+  "type": "PSP22",
+  "decimals": 12,
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisi eu tincidunt tincidunt, nunc nunc lacinia nunc,",
+  "sourceCode": "https://github.com/syncradao/app.syncra.xyz/",
+  "website": "",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": ""
+    },
+    {
+      "name": "Telegram",
+      "url": ""
+    },
+    {
+      "name": "Discord",
+      "url": ""
+    }
+  ]
+}
