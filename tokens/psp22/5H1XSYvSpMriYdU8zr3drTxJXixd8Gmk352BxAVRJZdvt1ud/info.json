@@ -1,0 +1,28 @@
+{
+  "name": "Button",
+  "symbol": "BTN",
+  "type": "PSP22",
+  "contractAddress": "5H1XSYvSpMriYdU8zr3drTxJXixd8Gmk352BxAVRJZdvt1ud",
+  "decimals": 6,
+  "description": "BTN is the utility token of btn.group",
+  "website": "https://btn.group/",
+  "sourceCode": "https://github.com/btn-group/az_button",
+  "links": [
+    {
+      "name": "X/Twitter",
+      "url": "https://x.com/btn_group"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/btn_group"
+    },
+    {
+      "name": "Discord",
+      "url": "https://discord.com/invite/fxTbthnzFW"
+    }
+  ],
+  "customTags": [],
+  "warnings": [],
+  "owner": "",
+  "minter": ""
+}
